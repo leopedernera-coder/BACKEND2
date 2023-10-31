@@ -1,0 +1,57 @@
+<main class="container">
+     <h1>Real-time products page</h1>
+     <p>Here you can view, add and delete products! Try it😁</p>
+     <div>
+        <h3>Add a product:</h3>
+        <div class="login-box">
+            <form id="addProduct" action="/api/products" method="POST">
+              <div class="user-box">
+                <label>Product name</label>
+                <input id="titleProduct" type="text" name="" required>
+              </div>
+              <div class="user-box">
+                <label>Product description</label>
+                <input id="descriptionProduct" type="text" name="" required>
+              </div>
+              <div class="user-box">
+                <label>Product code</label>
+                <input id="codeProduct" type="text" name="" required>
+              </div>
+              <div class="user-box">
+                <label>Product price</label>
+                <input id="priceProduct" type="number" name="" required>
+              </div>
+              <div class="user-box">
+                <label>Product stock</label>
+                <input id="stockProduct" type="number" name="" required>
+              </div>
+              <div class="user-box">
+                <label>Product category</label>
+                <input id="catProduct" type="text" name="" required>
+              </div>
+              <center>
+                    <input id="addButton" type="submit" value="add Product">
+                 <span></span>
+              </center>
+            </form>
+        </div>
+     </div>
+     <div>
+        <h3>View of products:</h3>
+        <div id="divRealTimeProducts"></div>
+     </div>
+     <div>
+        <h3>Delete a product:</h3>
+        <form id="formProductDelete" action="/api/products/:pid" method="DELETE">
+         <div class="user-box">
+                <label>Product id:</label>
+                <input id="idProductDelete"  type="text" required>
+        </div>
+        <center>
+             <input id="deleteButton" type="submit" value="Delete Product">
+        </center>
+        </form>
+     </div>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
